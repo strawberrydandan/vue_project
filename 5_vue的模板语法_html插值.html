@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的模板语法-html插值</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- 使用v-html指令用于输出html代码 -->
+        <p v-html="message"></p>
+    </div>
+    
+    <script>
+        new Vue({
+            el:'#test',
+            data:{
+                // 此时message对应的是html
+                message:'<h1>hello world!</h1>'
+            }
+        })
+    </script>
+</html>
