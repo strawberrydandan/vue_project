@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.js起步</title>
+    <!-- 引入vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue_det">
+        <h1>name ： {{ name }}</h1>
+        <h1>age ： {{ age }}</h1>
+        <h1>email ： {{ email }}</h1>
+        <h1>欢迎语 ： {{ detail() }}</h1>
+    </div>
+
+    <script>
+        // Vue构造器
+        datas = {
+                name:'wangdazhu',
+                age:'保密！',
+                email:'wangdazhu@163.com'
+            }
+        var data = new Vue({
+            // el参数表示DOM元素中的id
+            // 上面div标签的id是vue_det
+            el:'#vue_det',
+            // data用于定义属性
+            // 该div标签中有三个属性分别是:name age email
+            data: datas,
+            // methods用于定义函数，通过return来返回函数值
+            methods:{
+                detail:function(){
+                    return this.name + '----welcome to you!'
+                }
+            }
+        })
+        // {{ }} 用于输出对象属性和函数返回值
+
+
+        // 他们引用相同的对象
+        // document.write 会显示在页面上
+        document.write(data.name === datas.name)
+        document.write('<br>')
+
+        // 设置属性会影响原始数据
+        data.name = "wangdachui"
+        document.write(data.name + '<br>')
+        data.email = "wangdachui@163.com"
+        document.write(data.email + '<br>')
+
+        // 传入的数据修改也会影响后面的数据
+        // datas.age = "不告诉你哦！"
+        // document.write(datas.age)
+
+
+    </script>
+
+</body>
+</html>
