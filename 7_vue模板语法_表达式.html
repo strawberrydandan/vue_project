@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法_表达式</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- vue.js 提供了完全的javascript表达式支持 -->
+        <div v-bind:id="'list_'+index">
+            text1
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                // 这里index可以是1 也可以是'1'
+                index:'1'
+            }
+        })
+
+    </script>
+</body>
+</html>
