@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue的模板语法</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <!-- vue使用了基於HTML的模板語法 -->
+        <!-- 允许开发者声明式的将DOM绑定至底层vue实例的数据 -->
+        <!-- vue的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进DOM的系统 -->
+        <!-- 结合响应系统，在应用状态改变时，vue能够智能地计算出重新渲染组件的最小代价并应用到DOM操作上 -->
+        <p> {{message}} </p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                // 数据绑定最常见的形式就是使用双大括号
+                // 以上是文本插值
+                message:"Welcome to my sweet place ~"
+            }
+        })
+
+    </script>
+</body>
+
+</html>
