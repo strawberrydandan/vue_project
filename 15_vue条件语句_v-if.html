@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue条件语句-v-if</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                // seen:true,
+                seen:false,
+            }
+        })
+    </script>
+</body>
+</html>
