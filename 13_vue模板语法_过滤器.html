@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法-过滤器</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        {{ message | capitalize }}
+    </div>
+
+    <script>
+        // vue.js允许自定义过滤器，被用于一些常见的文本格式化，由管道符 | 指示 
+        // 过滤器函数接收表达式的值作为第一个参数
+        // 并且过滤器可以串联
+        // 例如：
+        // {{  meaasge | filterA('args1',args2)  }}
+        // 这里meassge是第一个参数，字符串args1将传给过滤器作为第二个参数
+        // args2表达式的值将被求值 然后传给过滤器作为第三个参数
+
+
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                message:"welcome"
+            },
+            filters:{
+                capitalize:function(value1){
+                    if (!value1) return ""
+                    value1 = value1.toString()
+                    // str.charAt(0)获取首字母
+                    // slice(start,end)方法
+                    // start：起始位置索引
+                    // end：结束位置索引
+                    // 如果某个参数为负数，则从字符串的结尾开始计数
+                    // 如果省略第二个参数，则该方法将取字符串的剩余部分
+                    return value1.charAt(0).toUpperCase()+value1.slice(1)
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
