@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法缩写</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- v-bind完整写法 -->
+        <a v-bind:href="url">百度</a>
+        <!-- v-bind缩写 -->
+        <a :href="url">百度</a>
+
+        <!-- v-on完整写法 -->
+        <a v-on:click="dosomething"></a>
+        <!-- v-on缩写 -->
+        <a @click="dosomething"></a>
+    </div>
+</body>
+</html>
