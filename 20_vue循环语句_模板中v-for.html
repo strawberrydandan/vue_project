@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue循环语句——模板中使用v-for</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <ul>
+            <template v-for="site in sites">
+                <li> {{ site.name }}</li>
+                <li>----------</li>
+            </template>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                sites: [{
+                        name: 'wangdazhu1'
+                    },
+                    {
+                        name: 'wangdazhu2'
+                    },
+                    {
+                        name: 'wangdazhu3'
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
