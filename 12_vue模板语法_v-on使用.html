@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法_v-on使用</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <p>{{ message }}</p>
+
+        <!-- reverseMessage是监听的事件 -->
+        <button v-on:click="reverseMessage">
+            字符串反转
+        </button>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                message : "Welcome to vue"
+            },
+            methods: {
+                // v-on监听事件，本实例是用户点击按钮后对字符串进行反转操作
+                reverseMessage:function(){
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
