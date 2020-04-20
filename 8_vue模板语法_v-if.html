@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法——v-if</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- 指令是带有v-前缀的特殊属性 -->
+        <!-- 指令用于在表达式的值改变时，将某些行为应用在DOM上 -->
+        <p v-if="seen">can you see me？？</p>
+        <p v-if="no-seen">can you see me？？？</p>
+        <!-- v-if指令将根据表达式seen的值为false或true来判断是否插入p元素 -->
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                seen:false,
+            }
+        })
+
+    </script>
+</body>
+</html>
