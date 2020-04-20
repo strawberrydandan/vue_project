@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法_v-bind</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <pre>
+            <!-- 参数在指令后以冒号指明 -->
+            <!-- 例如在这里 -->
+            <!-- v-bind指令被用来响应地更新html属性 -->
+            <!-- 在这里href是参数。告知v-bind指令将该元素的href属性与表达式url的值进行绑定 -->
+            <!-- 例如：v-on:click="dosomething"表示监听DOM事件，在这里参数是监听的dom事件 -->
+            <a v-bind:href = "url">点我进百度</a>
+        </pre>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                url:"https://www.baidu.com/"
+            }
+        })
+    </script>
+</body>
+</html>
