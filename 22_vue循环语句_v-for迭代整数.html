@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue循环语句-v-for迭代整数</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <ul>
+            <li v-for="i in 10">
+                text_{{ i }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                
+            }
+        })
+    </script>
+</body>
+</html>
