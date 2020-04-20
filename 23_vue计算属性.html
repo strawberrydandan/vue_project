@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue计算属性</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <p>原始字符串: {{ message }}</p>
+
+        <p>计算后的反转字符串 : {{ reverseMessage }}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#test",
+            data: {
+                message: "Welcome !"
+            },
+            // 我们可以使用methods来代替computed
+            // 效果上是一样的，但是computed是基于它的依赖缓存
+            // 只有相关依赖发生改变时才会重新取值
+            // 而使用methods，在重新渲染时函数总会重新调用执行
+            computed: {
+                // 计算属性的getter
+                reverseMessage: function () {
+                    // this指向当前vm实例
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+        // computed这里声明了一个计算属性reverseMessage
+        // 提供的函数将用作vm.reverseMessage的getter
+        // vm.reverseMessage依赖于vm.message
+        // 在vm.message发生改变时，vm.reverseMessage也会更新
+
+        // 可以说computed性能比methods性能好，但如果不需要缓存可以使用methods属性
+    </script>
+</body>
+
+</html>
