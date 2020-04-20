@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue条件语句——v-else</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <div v-if="Math.random() > 0.5">
+            如果num大于0.5我就跟你说对不起！
+        </div>
+        <div v-else>
+            如果num小于0.5我就不用说对不起咯~
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#test"
+        })
+    </script>
+</body>
+
+</html>
