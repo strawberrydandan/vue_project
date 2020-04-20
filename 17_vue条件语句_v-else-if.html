@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue条件语句-v-else-if</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <div v-if="type === 'A'">
+            类型A
+        </div>
+
+        <div v-else-if="type === 'B'">
+            类型B
+        </div>
+
+        <div v-else-if="type === 'C'">
+            类型C
+        </div>
+
+        <div v-else>
+            其他类型
+        </div>
+    </div>
+
+
+    <script>
+        // v-else、v-else-if 必须跟在v-if、v-else-if之后
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                type:"C"
+            }
+        })
+    </script>
+</body>
+
+</html>
