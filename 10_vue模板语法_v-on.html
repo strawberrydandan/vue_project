@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板语法-v-on</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <pre>
+            <form v-on:submit.prevent="onSubmit"></form>
+        </pre>
+        <!-- vue模板语法的修饰符 -->
+        <!-- 修饰符以半角句号.指明的特殊后缀，用于指出一个指令应该以特殊方式指定 -->
+        <!-- 例如：.prevent修饰符告诉v-on指令对于触发的事件调用event.preventDefault() -->
+        <!-- 注释： event.preventDefault()该方法是通知web浏览器不要执行与事件相关的默认动作-->
+        <!-- 例如：如果type类型是submit，在事件中传播的任意阶段可以调用任意的事件句柄，通过调用该方法，可以阻止表单提交 -->
+        <!-- 总而言之，调用该方法后都没有作用 -->
+    </div>
+</body>
+</html>
