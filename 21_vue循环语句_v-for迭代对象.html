@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue循环语句-v-for迭代对象</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <ul>
+            <li v-for = "value in object">
+                <!-- 值在第一个参数 -->
+                {{ value }}
+            </li>
+        </ul>
+
+
+        <ul>
+            <li v-for = "(value,key) in object">
+                <!-- 键在第二个参数 -->
+                {{ key }} : {{ value }}
+            </li>
+        </ul>
+
+
+
+        <ul>
+            <li v-for = "(value,key,index) in object">
+                <!-- 索引在第三个参数,索引从0开始 -->
+               {{ index }} : {{ key }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                object:{
+                    name:"wangdazhu",
+                    sex:"man",
+                    age:"None!"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
