@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <h1 v-show="ok">Hello！</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                // 不仅可以使用v-if来展示元素
+                // 还可以通过v-show指令来根据条件来展示元素
+                // ok:true,
+                ok:false,
+            }
+        })
+    </script>
+</body>
+</html>
