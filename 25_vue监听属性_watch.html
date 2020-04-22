@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue监听属性-watch</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <p>计数：{{ counter }} </p>
+        <button v-on:click="counter++">
+            点击
+        </button>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                counter:1
+            }
+        });
+
+        // 监听属性watch
+        // 可以通过watch来响应数据的变化
+        vm.$watch('counter',function(nval,oval){
+            alert("计数变化："+ oval + "变为 "+ nval + "!");
+        })
+            
+    </script>
+</body>
+
+</html>

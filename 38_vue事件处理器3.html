@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue事件处理器3</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <!-- v-on可以直接绑定到一个方法 还可以内联JavaScript语句 -->
+        <button v-on:click = "say('hi')">Say hi</button>
+        <button v-on:click = "say('what')">Say what</button>
+        <button v-on:click = "say('ByeBye')">Say ByeBye</button>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:'#test',
+            data:{
+
+            },
+            methods:{
+                say:function(value){
+                    alert(value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

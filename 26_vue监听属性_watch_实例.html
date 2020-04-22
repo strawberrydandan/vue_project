@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue监听属性_watch_实例</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <pre>
+            档案:
+            <!-- v-model实现双向数据绑定 -->
+            name ： <input type="text" v-model = "name">
+            email ： <input type="text" v-model = "email">
+        </pre>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                name:"None",
+                email:"None"
+            },
+            methods:{
+
+            },
+            computed:{
+
+            },
+            watch:{
+               name:function(val1){
+                    this.name = val1;
+                    this.email = this.name + '@163.com'
+               },
+               email:function(val2){
+                   this.email = val2;
+                   this.name = this.email.split('@')[0];
+               }
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue事件处理器1</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <button v-on:click="counter ++">点击</button>
+        <p>
+            点击次数： {{ counter }}
+        </p>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                counter : 0
+            }
+        })
+    </script>
+</body>
+</html>

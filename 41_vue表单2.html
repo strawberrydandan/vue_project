@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复选框</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <p>单个复选框</p>
+        <input type="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <p>多个复选框</p>
+        <input type="checkbox" value="数学" id="数学" v-model="checkedValue">
+        <!-- <label for="数学">数学</label> -->
+        <label >数学</label>
+        <input type="checkbox" value="语文" id="语文" v-model="checkedValue">
+        <label >语文</label>
+        <input type="checkbox" value="英语" id="英语" v-model="checkedValue">
+        <label >英语</label>
+        <br>    
+
+        <span>勾选的值为：{{ checkedValue }}</span>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                checked:false,
+                checkedValue:[]
+            }
+        })
+    </script>
+</body>
+</html>

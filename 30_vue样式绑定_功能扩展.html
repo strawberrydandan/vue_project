@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定-功能扩展</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .text-error {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 根据条件来决定给元素添加什么样的样式 -->
+    <div id="test">
+        <div v-bind:class="classobject">
+            hello样式
+        </div>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: "#test",
+            data: {
+                isActive: true,
+                error: {
+                    value: false,
+                    type: "fatal"
+                }
+            },
+            computed: {
+                classobject: function () {
+                    return {
+                        base: true,
+                        active: this.isActive && !this.error.value,
+                        'text-error': this.error.value && this.error.type === 'fatal',
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

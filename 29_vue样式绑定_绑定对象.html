@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定-绑定对象</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .text-error {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <div v-bind:class="classobject">
+            hello样式
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#test",
+            data: {
+                classobject: {
+                    active: true,
+                    'text-error': false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

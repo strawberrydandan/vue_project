@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定_v-bind多个样式</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .active{
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .text-error{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <!-- 可以绑定多个样式来切换 -->
+
+        <!-- 当有多个样式时，后面的样式生效会将前面的样式覆盖 -->
+        <div v-bind:class="{active:isActive,'text-error':hasError}">
+            hello样式
+        </div>
+    </div>
+
+
+    <script>    
+        new Vue({
+            el:"#test",
+            data:{
+                isActive:true,
+                hasError:false
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单选框</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <input type="radio" value="语文" id="语文" v-model="picked">
+        <label for="语文">语文</label> 
+        <input type="radio" value="数学" id="数学" v-model="picked">
+        <label for="数学">数学</label>
+        <br>
+        <span>选择的值为：{{ picked }}</span>
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                picked : "语文"
+            }
+        })
+    </script>
+</body>
+</html>

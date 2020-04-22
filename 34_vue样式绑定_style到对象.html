@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定_style绑定到对象</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="test">
+        <div v-bind:style="styleObject">
+            hello样式
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                // 将style绑定到对象styleObject
+                styleObject:{
+                    color:'pink',
+                    fontSize:'24px'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

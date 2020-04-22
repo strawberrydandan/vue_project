@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue表单-输入框</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="test">
+        <input type="text" v-model="message1" placeholder="请输入标题">
+        <p>用户输入的标题是: {{ message1 }}</p>
+
+        <textarea v-model="message2" name="content" id="" cols="30" rows="10" placeholder="请输入内容"></textarea>
+        <p style="white-space: pre;">用户输入的内容是: 
+            {{ message2 }}
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                message1 : '',
+                message2 : ''
+            }
+        })
+    </script>
+</body>
+</html>

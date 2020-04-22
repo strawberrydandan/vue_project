@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue事件处理器2</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <!-- v-on可以接受一个定义的方法来调用 -->
+        <button v-on:click="knock_this">点击</button>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                value : 'Hello ~'
+            },
+            methods:{
+                knock_this:function(event){
+                    alert(this.value)
+                    if (event){
+                        alert('显示标签名 ： '+event.target.tagName)
+                    }
+                }
+            }
+        })
+
+
+        // 还可以直接用原生js来调用该方法
+        vm.knock_this()
+        // 会弹窗 Hello ~
+    </script>
+</body>
+
+</html>

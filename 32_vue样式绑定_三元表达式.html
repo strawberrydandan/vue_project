@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定-三元表达式</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .text-error {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <!-- errorClass始终存在 -->
+        <!-- 当isActive为true时，添加activeClass类 -->
+        <!-- 当isActive为false时，不添加activeClass类 -->
+        <!-- 同时利用了数组语法 -->
+        <div v-bind:class="[errorClass , isActive ? activeClass : '']">
+            hello样式
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#test",
+            data:{
+                isActive : false,
+                activeClass : 'active',
+                errorClass : 'text-error'
+            }
+        })
+    </script>
+</body>
+</html>

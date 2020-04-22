@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉框</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        <select name="学科" v-model="selected">
+            <option value="语文">默认选择语文</option>
+            <option value="数学">数学</option>
+            <option value="英语">英语</option>
+        </select>
+
+        <div id="test1">
+            <span>
+                选择的学科为：{{ selected }}
+            </span>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+        new Vue({
+            el: "#test",
+            data: {
+                selected: '语文'
+            }
+        })
+    </script>
+</body>
+
+</html>

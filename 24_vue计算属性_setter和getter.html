@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue计算属性_setter和getter</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- computed属性默认只有getter -->
+    <!-- 在需要的时候可以自己提供一个setter -->
+
+    <div id="test">
+        <p>{{ site }}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#test",
+            data:{
+                name:"wangdazhu",
+                email:"wangdazhu@163.com"
+            },
+            computed:{
+                site:{
+                    //getter
+                    get:function(){
+                        return this.name + "----" + this.email
+                    },
+
+                    //setter
+                    set:function(newvalue){
+                        var names = newvalue.split('----')
+                        this.name = names[0]
+                        // this.email = names[names.length - 1]
+                        this.email = names[1]
+                    }
+                }
+            }
+
+        })
+
+        // 调用setter
+        // vm.name 和 vm.email也会对应更新
+        vm.site = "wangdachui----wangdachui@163.com";
+        
+        document.write('name: '+vm.name);
+        document.write('<br>');
+        document.write('email: '+vm.email);
+    </script>
+</body>
+
+</html>

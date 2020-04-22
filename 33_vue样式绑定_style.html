@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue样式绑定_style</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    
+</head>
+<body>
+    <div id="test">
+        <div v-bind:style="{width:a,height:b,background:c,fontSize:d}">
+            hello样式
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#test',
+            data:{
+                a:'100px',
+                b:'100px',
+                c:'pink',
+                d:'12px',
+            }
+        })
+    </script>
+</body>
+</html>
